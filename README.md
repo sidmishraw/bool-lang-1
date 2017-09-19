@@ -7,12 +7,16 @@ This is the language implementation for **`BOOL*`**
 ```
 e ::= True
     | False
+    | n
     | if e then e else e
+    | succ e
+    | pred e
 ```
 
 ```
 v ::= True
     | False
+    | n
 ```
 
 ## Big Step operational semantics:
@@ -34,4 +38,18 @@ if e1 then e2 else e3 ⇓ v
 * Rule#3
 ```
 v ⇓ v
+```
+
+* Rule#4
+```
+ e ⇓ n
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯                      [BS - Succ]
+succ e ⇓ n + 1
+```
+
+* Rule#4
+```
+ e ⇓ n
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯                      [BS - Pred]
+pred e ⇓ n - 1
 ```
