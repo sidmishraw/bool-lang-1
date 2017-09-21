@@ -14,7 +14,7 @@ package boollang
   *
   *         Description: BigStepSemantics for a sample language BOOL*
   *
-  *         e :=    True
+  *         e := True
   *         |   False
   *         |   if e then e else e
   *
